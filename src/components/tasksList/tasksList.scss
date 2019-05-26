@@ -1,0 +1,30 @@
+.tasks-list {
+  flex: 40%;
+  margin-top: 50px;
+  border: .5px solid;
+  border-radius: 10px;
+  display: flex;
+  background-color: #eee;
+  flex-direction: column;
+  overflow: hidden;
+
+  &_tabs {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+    height: fit-content;
+    border-bottom: 1px solid;
+
+    &_item {
+      flex: 1;
+      text-align: center;
+      &__name {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &_tasks-wrapper {
+    overflow-y: scroll;
+  }
+}

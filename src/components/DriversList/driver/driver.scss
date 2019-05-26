@@ -1,0 +1,67 @@
+@import "../../../shared/styles/shared";
+
+.driver {
+  height: 90px;
+  border-radius: 10px;
+  border: .5px solid;
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+
+  &__picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    border: 1px solid;
+    margin: 10px;
+  }
+
+  &_details {
+    flex: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 10px 0 5px 0 ;
+    }
+
+    &__sub-detail {
+      font-size: 10px;
+    }
+  }
+
+  &_actions {
+    flex: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 10px;
+
+    &__btn {
+      color: #fff;
+      width: 100px;
+      height: 30px;
+      border-radius: 15px;
+      margin-top: 10px;
+      font-size: 12px;
+      cursor: pointer;
+
+      &:focus {
+        outline: -webkit-focus-ring-color auto 0;
+      }
+    }
+
+    &__btn--select {
+      background-color: #5658ff;
+    }
+
+    &__btn--remove {
+      background-color: #ff3131;
+    }
+  }
+}
