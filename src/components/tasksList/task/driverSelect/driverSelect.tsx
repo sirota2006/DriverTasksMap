@@ -35,11 +35,13 @@ class DriverSelect extends React.Component<Props, DriverSelectProps> {
     }
 
     onAssignTask = (driver: IDriver) => {
+        if (!driver.task) {
         this.toggleModal();
         this.props.assignTaskAction(this.props.taskToAssign, driver._id);
             this.setState((state: DriverSelectProps) => {
                 state.assignedDriverName = driver.name;
             })
+        }
     };
 
 
@@ -51,7 +53,7 @@ class DriverSelect extends React.Component<Props, DriverSelectProps> {
                             <span onClick={() => this.toggleModal()} className="driver-select_btn_modal_wrapper__close">&times;</span>
                             {filterBy(this.props.drivers, 'name', this.props.filterBy).map(driver => {
                                 return (
-                                    <div key={driver._id} onClick={() => this.onAssignTask(driver)} className={driver.task && driver.task._id === this.props.taskToAssign._id ? "driver-select_btn_modal_wrapper_driver assigned" :  "driver-select_btn_modal_wrapper_driver"}>
+                                    <div key={driver._id} onClick={() => this.onAssignTask(driver)} className={driver.task ? "driver-select_btn_modal_wrapper_driver assigned" :  "driver-select_btn_modal_wrapper_driver"}>
                                         <span className="driver-select_btn_modal_wrapper_driver__name">
                                             {driver.name}
                                         </span>
